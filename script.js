@@ -11,31 +11,108 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const projectsData = [
   {
     id: 1,
-    title: "Lumina",
-    category: "E-Commerce",
+    title: "Calm Waters Plett",
+    category: "Web Design & Dev",
+    role: "End-to-End Website Build",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1637536701369-f815af927b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZGl0b3JpYWwlMjBmYXNoaW9uJTIwcG9ydHJhaXQlMjBibGFjayUyMGFuZCUyMHdoaXRlfGVufDF8fHx8MTc3MzgyMjAyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+    img: "./pics/sewell1.webp",
+    caseStudyImg: "./pics/sewell2.webp",
+    intro:
+      "A full website design and development project for a Plettenberg Bay holiday rental and property management agency.",
+    sectionTitle: "The Project",
+    copy: [
+      "Calm Waters Plett needed a website built from the ground up to present its holiday home rentals, guesthouse offering, and property management services with more clarity and confidence. The brief was to create a site that felt calm and welcoming while helping both guests and property owners quickly understand what the business offers.",
+      "We handled the project from start to finish, shaping the site structure, messaging direction, visual design, and front-end build. The final website reflects the brand's 'your home is our home' philosophy, highlights the appeal of Plettenberg Bay, and gives the business a polished digital presence it can keep growing with.",
+    ],
+    impactTitle: "Impact",
+    stats: [
+      {
+        label: "140%",
+        copy: "Increase in engagement",
+      },
+      {
+        label: "2.5x",
+        copy: "Longer session duration",
+      },
+    ],
   },
   {
     id: 2,
-    title: "Overture",
-    category: "Portfolio",
+    title: "The World Can Wait",
+    category: "Band Website",
+    role: "Website Design & Dev",
     year: "2023",
-    img: "https://images.unsplash.com/photo-1622551557390-f20221b206aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwdHlwb2dyYXBoeSUyMG1hZ2F6aW5lJTIwbGF5b3V0fGVufDF8fHx8MTc3MzgyMjAyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+    img: "./pics/guitar.webp",
+    intro:
+      "A website for a Namibian punk-rock band, built to capture identity, energy, and atmosphere without losing clarity.",
+    sectionTitle: "The Challenge",
+    copy: [
+      "The World Can Wait needed a site that felt true to the band's punk-rock identity while still presenting their music, visuals, and story in a way that felt intentional and easy to navigate. The challenge was creating something expressive and raw without letting the experience become chaotic.",
+      "We built the website from concept through execution, shaping a visual direction that balances attitude with structure. The final result gives the band a stronger digital presence, a distinct online world, and a platform that feels aligned with their sound.",
+    ],
+    impactTitle: "Impact",
+    stats: [
+      {
+        label: "140%",
+        copy: "Increase in engagement",
+      },
+      {
+        label: "2.5x",
+        copy: "Longer session duration",
+      },
+    ],
   },
   {
     id: 3,
-    title: "Archiva",
-    category: "Corporate",
+    title: "Kim Stadtherr Music",
+    category: "Musician Website",
+    role: "Website Design & Dev",
     year: "2023",
-    img: "https://images.unsplash.com/photo-1769283991436-9ce2354aaaf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBicnV0YWxpc3QlMjBhcmNoaXRlY3R1cmUlMjBjb25jcmV0ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: "./pics/kim1.webp",
+    intro:
+      "A personal artist and musician website designed to feel expressive, atmospheric, and closely tied to the music itself.",
+    sectionTitle: "The Challenge",
+    copy: [
+      "Kim Stadtherr Music needed a website that could hold music, identity, and visual atmosphere in one place without feeling overly polished or disconnected from the artist's voice. The goal was to create something personal and memorable while still making key content easy to navigate.",
+      "We developed the site from concept through build, shaping an experience that balances clarity with mood. The finished website gives the project a stronger digital presence and creates a more intentional space for listeners to connect with the music.",
+    ],
+    impactTitle: "Impact",
+    stats: [
+      {
+        label: "Audience",
+        copy: "A clearer home for music, artist identity, and discovery.",
+      },
+      {
+        label: "Atmosphere",
+        copy: "A website that feels aligned with the tone and world of the project.",
+      },
+    ],
   },
   {
     id: 4,
-    title: "Vibe Studio",
-    category: "Agency",
+    title: "JP Padel Coaching",
+    category: "Coaching Website",
+    role: "Website Design & Dev",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1760143769741-9a215acf44cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGlnaXRhbCUyMGFydCUyMGFic3RyYWN0JTIwYmx1ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: "./pics/padel1.webp",
+    intro:
+      "A coaching website designed to feel focused, polished, and approachable while giving the brand a stronger digital presence.",
+    sectionTitle: "The Challenge",
+    copy: [
+      "JP Padel Coaching needed a website that could present coaching services clearly while still feeling premium and personal. The challenge was finding the right balance between credibility, usability, and a visual identity that felt modern rather than generic.",
+      "We designed and built a site that gives the coaching brand a clearer structure, stronger presence, and a more confident online home. The final result supports enquiries, communicates expertise, and makes the offering easier to understand at a glance.",
+    ],
+    impactTitle: "Impact",
+    stats: [
+      {
+        label: "Clarity",
+        copy: "A cleaner path to services, positioning, and enquiry actions.",
+      },
+      {
+        label: "Presence",
+        copy: "A stronger coaching brand translated into a more polished web experience.",
+      },
+    ],
   },
 ];
 const touchInteractiveElements = document.querySelectorAll(
@@ -194,8 +271,15 @@ function setupTouchInteractions() {
 
 function populateCaseStudyPage() {
   const titleNode = document.querySelector("[data-project-title]");
+  const roleNode = document.querySelector("[data-project-role]");
   const yearNode = document.querySelector("[data-project-year]");
   const imageNode = document.querySelector("[data-project-image]");
+  const introNode = document.querySelector("[data-project-intro]");
+  const sectionTitleNode = document.querySelector("[data-project-section-title]");
+  const copyNodes = document.querySelectorAll("[data-project-copy]");
+  const impactTitleNode = document.querySelector("[data-project-impact-title]");
+  const statLabelNodes = document.querySelectorAll("[data-project-stat-label]");
+  const statCopyNodes = document.querySelectorAll("[data-project-stat-copy]");
 
   if (!titleNode || !yearNode || !imageNode) {
     return;
@@ -206,10 +290,41 @@ function populateCaseStudyPage() {
   const project = projectsData.find((item) => item.id === projectId) || projectsData[0];
 
   titleNode.textContent = project.title;
+  if (roleNode && project.role) {
+    roleNode.textContent = project.role;
+  }
   yearNode.textContent = project.year;
-  imageNode.setAttribute("src", project.img);
+  imageNode.setAttribute("src", project.caseStudyImg || project.img);
   imageNode.setAttribute("alt", project.title);
   document.title = `${project.title} | Papermoon`;
+
+  if (introNode && project.intro) {
+    introNode.textContent = project.intro;
+  }
+
+  if (sectionTitleNode && project.sectionTitle) {
+    sectionTitleNode.textContent = project.sectionTitle;
+  }
+
+  if (project.copy?.length) {
+    copyNodes.forEach((node, index) => {
+      node.textContent = project.copy[index] || "";
+    });
+  }
+
+  if (impactTitleNode && project.impactTitle) {
+    impactTitleNode.textContent = project.impactTitle;
+  }
+
+  if (project.stats?.length) {
+    statLabelNodes.forEach((node, index) => {
+      node.textContent = project.stats[index]?.label || "";
+    });
+
+    statCopyNodes.forEach((node, index) => {
+      node.textContent = project.stats[index]?.copy || "";
+    });
+  }
 }
 
 function finalizeLoadAnimations() {
