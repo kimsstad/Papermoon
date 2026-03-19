@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Papermoon</title>
+    <meta
+      name="description"
+      content="Explore Papermoon's capabilities across web design, development, branding, and strategy."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-noise" aria-hidden="true"></div>
+
+    <header class="site-header is-light" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="index.html#home" aria-label="Papermoon home">
+          <img src="./pics/Papermoon%20logo.png" alt="Papermoon logo" class="brand-logo" />
+          <span class="brand-text">Papermoon</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="about.html" data-nav-link="about">About</a>
+          <a href="services.html" data-nav-link="services">Services</a>
+          <a href="work.html" data-nav-link="work">Work</a>
+          <a href="contact.html" data-nav-link="contact">Contact</a>
+        </nav>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="menu-icon menu-icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+          <svg class="menu-icon menu-icon-close" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M6 6l12 12M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav class="mobile-menu-nav" aria-label="Mobile primary">
+        <a href="about.html" class="mobile-menu-link" data-nav-link="about">About</a>
+        <a href="services.html" class="mobile-menu-link" data-nav-link="services">Services</a>
+        <a href="work.html" class="mobile-menu-link" data-nav-link="work">Work</a>
+        <a href="contact.html" class="mobile-menu-link" data-nav-link="contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main class="page-shell">
+      <div class="theme-section" data-theme="light">
+        <section class="services-page" data-nav-section="services">
+          <div class="container">
+            <header class="services-page-header">
+              <h1 class="services-page-title reveal-load">
+                Capabili<span>ties</span>
+              </h1>
+              <p class="services-page-subtitle reveal-load delay-1">
+                Everything you need. Nothing you don't.
+              </p>
+            </header>
+
+            <section class="services-page-grid">
+              <article class="service-card reveal-up" style="--reveal-delay: 0ms;">
+                <div class="service-card-head">
+                  <h2>Web Design</h2>
+                  <span class="service-card-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 12h14M13 5l7 7-7 7"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <p class="service-card-desc">
+                  Editorial-driven, immersive web design that treats the browser as a blank canvas.
+                </p>
+                <ul class="service-card-features">
+                  <li><span></span>Art Direction</li>
+                  <li><span></span>UI/UX Design</li>
+                  <li><span></span>Wireframing</li>
+                  <li><span></span>Interaction Design</li>
+                </ul>
+              </article>
+
+              <article class="service-card reveal-up" style="--reveal-delay: 90ms;">
+                <div class="service-card-head">
+                  <h2>Web Development</h2>
+                  <span class="service-card-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 12h14M13 5l7 7-7 7"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <p class="service-card-desc">
+                  Pixel-perfect execution with modern frameworks. Fast, accessible, and dynamic.
+                </p>
+                <ul class="service-card-features">
+                  <li><span></span>React / Next.js</li>
+                  <li><span></span>Creative Coding (WebGL/Canvas)</li>
+                  <li><span></span>CMS Integration</li>
+                  <li><span></span>Performance Optimization</li>
+                </ul>
+              </article>
+
+              <article class="service-card reveal-up" style="--reveal-delay: 180ms;">
+                <div class="service-card-head">
+                  <h2>Brand Identity</h2>
+                  <span class="service-card-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 12h14M13 5l7 7-7 7"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <p class="service-card-desc">
+                  Visual systems that capture the essence of your business.
+                </p>
+                <ul class="service-card-features">
+                  <li><span></span>Logo Design</li>
+                  <li><span></span>Typography Selection</li>
+                  <li><span></span>Color Theory</li>
+                  <li><span></span>Brand Guidelines</li>
+                </ul>
+              </article>
+
+              <article class="service-card reveal-up" style="--reveal-delay: 270ms;">
+                <div class="service-card-head">
+                  <h2>SEO &amp; Strategy</h2>
+                  <span class="service-card-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 12h14M13 5l7 7-7 7"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <p class="service-card-desc">
+                  Ensuring your beautiful site actually reaches its audience.
+                </p>
+                <ul class="service-card-features">
+                  <li><span></span>Technical SEO</li>
+                  <li><span></span>Content Strategy</li>
+                  <li><span></span>Analytics Setup</li>
+                  <li><span></span>Conversion Optimization</li>
+                </ul>
+              </article>
+            </section>
+
+            <section class="services-quote-break reveal-up">
+              <img
+                src="https://images.unsplash.com/photo-1694500069324-d782decdd190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwYmx1ZXxlbnwxfHx8fDE3NzM3NTg1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Abstract geometric composition"
+              />
+              <div class="services-quote-overlay">
+                <h2>"Design is the silent ambassador of your brand."</h2>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="theme-section" data-theme="dark">
+      <footer class="site-footer" id="contact">
+        <div class="texture-noise footer-noise" aria-hidden="true"></div>
+        <div class="container footer-inner">
+          <div class="footer-top">
+            <div class="footer-cta reveal-up">
+              <h2>
+                Let's create <br />
+                something <span>extraordinary</span>.
+              </h2>
+              <a class="footer-project-link" href="contact.html">
+                <span>Start a project</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M9 7h8v8"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div class="footer-links">
+              <div class="footer-column reveal-up" style="--reveal-delay: 100ms;">
+                <p>Menu</p>
+                <ul>
+                  <li><a href="index.html#home">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="work.html">Work</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-column reveal-up" style="--reveal-delay: 180ms;">
+                <p>Socials</p>
+                <ul>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+                  <li><a href="#">Dribbble</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Papermoon Technical Creatives</p>
+            <div class="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+
+          <div class="footer-background-word" aria-hidden="true">PAPERMOON</div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

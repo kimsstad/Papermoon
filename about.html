@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Papermoon</title>
+    <meta
+      name="description"
+      content="Learn about Papermoon's philosophy, process, and approach to expressive digital design."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-noise" aria-hidden="true"></div>
+
+    <header class="site-header is-light" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="index.html#home" aria-label="Papermoon home">
+          <img src="./pics/Papermoon%20logo.png" alt="Papermoon logo" class="brand-logo" />
+          <span class="brand-text">Papermoon</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="about.html" data-nav-link="about">About</a>
+          <a href="services.html" data-nav-link="services">Services</a>
+          <a href="work.html" data-nav-link="work">Work</a>
+          <a href="contact.html" data-nav-link="contact">Contact</a>
+        </nav>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="menu-icon menu-icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+          <svg class="menu-icon menu-icon-close" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M6 6l12 12M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav class="mobile-menu-nav" aria-label="Mobile primary">
+        <a href="about.html" class="mobile-menu-link" data-nav-link="about">About</a>
+        <a href="services.html" class="mobile-menu-link" data-nav-link="services">Services</a>
+        <a href="work.html" class="mobile-menu-link" data-nav-link="work">Work</a>
+        <a href="contact.html" class="mobile-menu-link" data-nav-link="contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main class="page-shell">
+      <div class="theme-section" data-theme="light">
+        <section class="about-page" data-nav-section="about">
+          <div class="container">
+            <header class="about-header">
+              <h1 class="about-title reveal-load">The Studio</h1>
+
+              <div class="about-philosophy">
+                <div class="about-philosophy-block">
+                  <p class="about-kicker">Our Philosophy</p>
+                  <div class="about-philosophy-card reveal-up">
+                    <img
+                      src="https://images.unsplash.com/photo-1588477541489-e896546ce545?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHRlYW0lMjBzdHVkaW8lMjBibGFjayUyMGFuZCUyMHdoaXRlfGVufDF8fHx8MTc3MzgyMjE3M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      alt="Studio philosophy"
+                    />
+                    <div class="about-philosophy-overlay">
+                      <p>
+                        We believe the web is a canvas. Code is our brush, and design is our soul.
+                        We build digital artifacts that endure.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <section class="about-process">
+              <div class="about-process-layout">
+                <div class="about-process-title-wrap">
+                  <h2 class="about-process-title">
+                    The <br />
+                    <span>Process</span>
+                  </h2>
+                </div>
+
+                <div class="about-process-steps">
+                  <article class="about-process-step reveal-up" style="--reveal-delay: 0ms;">
+                    <span class="about-step-number">01</span>
+                    <div class="about-step-copy">
+                      <h3>Discovery</h3>
+                      <p>
+                        We begin by unearthing the raw essence of your brand. Understanding the
+                        "why" before the "how".
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="about-process-step reveal-up" style="--reveal-delay: 90ms;">
+                    <span class="about-step-number">02</span>
+                    <div class="about-step-copy">
+                      <h3>Art Direction</h3>
+                      <p>
+                        Crafting a visual language that speaks volumes. Moodboards, typography, and
+                        color theory combined to create emotion.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="about-process-step reveal-up" style="--reveal-delay: 180ms;">
+                    <span class="about-step-number">03</span>
+                    <div class="about-step-copy">
+                      <h3>Technical Architecture</h3>
+                      <p>
+                        Building robust, performant foundations. We don't just make it look good; we
+                        ensure it works flawlessly.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="about-process-step reveal-up" style="--reveal-delay: 270ms;">
+                    <span class="about-step-number">04</span>
+                    <div class="about-step-copy">
+                      <h3>Refinement</h3>
+                      <p>
+                        The polish. Micro-interactions, animations, and the subtle details that
+                        elevate good to great.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="theme-section" data-theme="dark">
+      <footer class="site-footer" id="contact">
+        <div class="texture-noise footer-noise" aria-hidden="true"></div>
+        <div class="container footer-inner">
+          <div class="footer-top">
+            <div class="footer-cta reveal-up">
+              <h2>
+                Let's create <br />
+                something <span>extraordinary</span>.
+              </h2>
+              <a class="footer-project-link" href="contact.html">
+                <span>Start a project</span>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 17L17 7M9 7h8v8"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div class="footer-links">
+              <div class="footer-column reveal-up" style="--reveal-delay: 100ms;">
+                <p>Menu</p>
+                <ul>
+                  <li><a href="index.html#home">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="work.html">Work</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-column reveal-up" style="--reveal-delay: 180ms;">
+                <p>Socials</p>
+                <ul>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+                  <li><a href="#">Dribbble</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Papermoon Technical Creatives</p>
+            <div class="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+
+          <div class="footer-background-word" aria-hidden="true">PAPERMOON</div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
