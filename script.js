@@ -25,6 +25,10 @@ const projectsData = [
       "We handled the project from start to finish, shaping the site structure, messaging direction, visual design, and front-end build. The final website reflects the brand's 'your home is our home' philosophy, highlights the appeal of Plettenberg Bay, and gives the business a polished digital presence it can keep growing with.",
     ],
     impactTitle: "Impact",
+    mockups: [
+      "https://images.unsplash.com/photo-1760143769741-9a215acf44cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGlnaXRhbCUyMGFydCUyMGFic3RyYWN0JTIwYmx1ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1694500069324-d782decdd190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwYmx1ZXxlbnwxfHx8fDE3NzM3NTg1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    ],
     stats: [
       {
         label: "140%",
@@ -42,7 +46,7 @@ const projectsData = [
     category: "Band Website",
     role: "Website Design & Dev",
     year: "2023",
-    img: "./pics/guitar.webp",
+    img: "./pics/bandpic1.webp",
     intro:
       "A website for a Namibian punk-rock band, built to capture identity, energy, and atmosphere without losing clarity.",
     sectionTitle: "The Challenge",
@@ -51,6 +55,10 @@ const projectsData = [
       "We built the website from concept through execution, shaping a visual direction that balances attitude with structure. The final result gives the band a stronger digital presence, a distinct online world, and a platform that feels aligned with their sound.",
     ],
     impactTitle: "Impact",
+    mockups: [
+      "./pics/worldcanwait1.webp",
+      "./pics/worldcanwait2.webp",
+    ],
     stats: [
       {
         label: "140%",
@@ -77,6 +85,10 @@ const projectsData = [
       "We developed the site from concept through build, shaping an experience that balances clarity with mood. The finished website gives the project a stronger digital presence and creates a more intentional space for listeners to connect with the music.",
     ],
     impactTitle: "Impact",
+    mockups: [
+      "https://images.unsplash.com/photo-1760143769741-9a215acf44cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGlnaXRhbCUyMGFydCUyMGFic3RyYWN0JTIwYmx1ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1694500069324-d782decdd190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwYmx1ZXxlbnwxfHx8fDE3NzM3NTg1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    ],
     stats: [
       {
         label: "Audience",
@@ -103,6 +115,10 @@ const projectsData = [
       "We designed and built a site that gives the coaching brand a clearer structure, stronger presence, and a more confident online home. The final result supports enquiries, communicates expertise, and makes the offering easier to understand at a glance.",
     ],
     impactTitle: "Impact",
+    mockups: [
+      "https://images.unsplash.com/photo-1760143769741-9a215acf44cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGlnaXRhbCUyMGFydCUyMGFic3RyYWN0JTIwYmx1ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1694500069324-d782decdd190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwYmx1ZXxlbnwxfHx8fDE3NzM3NTg1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    ],
     stats: [
       {
         label: "Clarity",
@@ -280,6 +296,7 @@ function populateCaseStudyPage() {
   const impactTitleNode = document.querySelector("[data-project-impact-title]");
   const statLabelNodes = document.querySelectorAll("[data-project-stat-label]");
   const statCopyNodes = document.querySelectorAll("[data-project-stat-copy]");
+  const mockupImages = document.querySelectorAll(".case-study-mockup img");
 
   if (!titleNode || !yearNode || !imageNode) {
     return;
@@ -314,6 +331,14 @@ function populateCaseStudyPage() {
 
   if (impactTitleNode && project.impactTitle) {
     impactTitleNode.textContent = project.impactTitle;
+  }
+
+  if (project.mockups?.length) {
+    mockupImages.forEach((node, index) => {
+      if (project.mockups[index]) {
+        node.setAttribute("src", project.mockups[index]);
+      }
+    });
   }
 
   if (project.stats?.length) {
