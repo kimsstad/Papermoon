@@ -45,7 +45,7 @@ const projectsData = [
     title: "The World Can Wait",
     category: "Band Website",
     role: "Website Design & Dev",
-    year: "2023",
+    year: "2024",
     img: "./pics/bandpic1.webp",
     intro:
       "A website for a Namibian punk-rock band, built to capture identity, energy, and atmosphere without losing clarity.",
