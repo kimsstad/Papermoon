@@ -26,8 +26,8 @@ const projectsData = [
     ],
     impactTitle: "Impact",
     mockups: [
-      "https://images.unsplash.com/photo-1760143769741-9a215acf44cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGlnaXRhbCUyMGFydCUyMGFic3RyYWN0JTIwYmx1ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1694500069324-d782decdd190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwYmx1ZXxlbnwxfHx8fDE3NzM3NTg1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "./pics/cwphone.webp",
+      "./pics/cwlaptop.webp",
     ],
     stats: [
       {
@@ -75,19 +75,20 @@ const projectsData = [
     title: "Kim Stadtherr Music",
     category: "Musician Website",
     role: "Website Design & Dev",
-    year: "2023",
+    year: "2025",
     img: "./pics/kim1.webp",
     intro:
-      "A personal artist and musician website designed to feel expressive, atmospheric, and closely tied to the music itself.",
+      "A personal artist website built around a signal transmission concept, designed to feel immersive, atmospheric, and closely tied to the music itself.",
     sectionTitle: "The Challenge",
     copy: [
-      "Kim Stadtherr Music needed a website that could hold music, identity, and visual atmosphere in one place without feeling overly polished or disconnected from the artist's voice. The goal was to create something personal and memorable while still making key content easy to navigate.",
-      "We developed the site from concept through build, shaping an experience that balances clarity with mood. The finished website gives the project a stronger digital presence and creates a more intentional space for listeners to connect with the music.",
+      "Kim Stadtherr's music needed a digital space that felt as intentional and atmospheric as the work itself, without relying on a conventional artist website structure.",
+      "The site was built around a signal transmission concept, where songs exist as 'transmissions' and the interface behaves like a system. This creates a more immersive experience while still keeping key content clear and accessible.",
+      "The result is a website that balances clarity with atmosphere, giving the music a distinctive, cohesive space to live online.",
     ],
     impactTitle: "Impact",
     mockups: [
-      "https://images.unsplash.com/photo-1760143769741-9a215acf44cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGlnaXRhbCUyMGFydCUyMGFic3RyYWN0JTIwYmx1ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1694500069324-d782decdd190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwYmx1ZXxlbnwxfHx8fDE3NzM3NTg1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "./pics/ksphone.webp",
+      "./pics/kslaptop.webp",
     ],
     stats: [
       {
@@ -102,10 +103,10 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "JP Padel Coaching",
+    title: "JB Padel",
     category: "Coaching Website",
-    role: "Website Design & Dev",
-    year: "2024",
+    role: "Website Design",
+    year: "2026",
     img: "./pics/padel1.webp",
     intro:
       "A coaching website designed to feel focused, polished, and approachable while giving the brand a stronger digital presence.",
@@ -116,8 +117,8 @@ const projectsData = [
     ],
     impactTitle: "Impact",
     mockups: [
-      "https://images.unsplash.com/photo-1760143769741-9a215acf44cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGlnaXRhbCUyMGFydCUyMGFic3RyYWN0JTIwYmx1ZXxlbnwxfHx8fDE3NzM4MjIwMjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1694500069324-d782decdd190?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwYmx1ZXxlbnwxfHx8fDE3NzM3NTg1MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "./pics/JBphone.webp",
+      "./pics/jblaptop.webp",
     ],
     stats: [
       {
