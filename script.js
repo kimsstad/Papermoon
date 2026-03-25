@@ -12,6 +12,7 @@ const projectsData = [
   {
     id: 1,
     title: "Calm Waters Plett",
+    website: "https://calmwatersplett.co.za/",
     category: "Web Design & Dev",
     role: "End-to-End Website Build",
     year: "2024",
@@ -31,18 +32,19 @@ const projectsData = [
     ],
     stats: [
       {
-        label: "140%",
-        copy: "Increase in engagement",
+        label: "Reach",
+        copy: "More people discovering the property.",
       },
       {
-        label: "2.5x",
-        copy: "Longer session duration",
+        label: "Conversion",
+        copy: "More enquiries and bookings.",
       },
     ],
   },
   {
     id: 2,
     title: "The World Can Wait",
+    website: "https://theworldcanwait.com/",
     category: "Band Website",
     role: "Website Design & Dev",
     year: "2024",
@@ -61,18 +63,19 @@ const projectsData = [
     ],
     stats: [
       {
-        label: "140%",
-        copy: "Increase in engagement",
+        label: "Clarity",
+        copy: "Clearer access to music and content.",
       },
       {
-        label: "2.5x",
-        copy: "Longer session duration",
+        label: "Connection",
+        copy: "Stronger link between the band and listeners.",
       },
     ],
   },
   {
     id: 3,
-    title: "Kim Stadtherr Music",
+    title: "Kim Stadtherr",
+    website: "https://www.kimstadtherr.com/",
     category: "Musician Website",
     role: "Website Design & Dev",
     year: "2025",
@@ -123,11 +126,11 @@ const projectsData = [
     stats: [
       {
         label: "Clarity",
-        copy: "A cleaner path to services, positioning, and enquiry actions.",
+        copy: "Clearer services and coaching structure.",
       },
       {
-        label: "Presence",
-        copy: "A stronger coaching brand translated into a more polished web experience.",
+        label: "Conversion",
+        copy: "More enquiries and session bookings.",
       },
     ],
   },
@@ -288,6 +291,7 @@ function setupTouchInteractions() {
 
 function populateCaseStudyPage() {
   const titleNode = document.querySelector("[data-project-title]");
+  const titleLinkNode = document.querySelector("[data-project-title-link]");
   const roleNode = document.querySelector("[data-project-role]");
   const yearNode = document.querySelector("[data-project-year]");
   const imageNode = document.querySelector("[data-project-image]");
@@ -308,6 +312,21 @@ function populateCaseStudyPage() {
   const project = projectsData.find((item) => item.id === projectId) || projectsData[0];
 
   titleNode.textContent = project.title;
+  if (titleLinkNode) {
+    if (project.website) {
+      titleLinkNode.setAttribute("href", project.website);
+      titleLinkNode.setAttribute("target", "_blank");
+      titleLinkNode.setAttribute("rel", "noreferrer");
+      titleLinkNode.classList.remove("is-static");
+      titleLinkNode.removeAttribute("aria-disabled");
+    } else {
+      titleLinkNode.removeAttribute("href");
+      titleLinkNode.removeAttribute("target");
+      titleLinkNode.removeAttribute("rel");
+      titleLinkNode.classList.add("is-static");
+      titleLinkNode.setAttribute("aria-disabled", "true");
+    }
+  }
   if (roleNode && project.role) {
     roleNode.textContent = project.role;
   }

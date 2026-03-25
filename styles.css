@@ -799,6 +799,25 @@ body.menu-open .mobile-menu {
   font-weight: 500;
 }
 
+.case-study-title-link {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.case-study-title-link:hover,
+.case-study-title-link:focus-visible {
+  color: var(--color-brand-cobalt);
+}
+
+.case-study-title-link:focus-visible {
+  outline: none;
+}
+
+.case-study-title-link.is-static {
+  pointer-events: none;
+}
+
 .case-study-intro {
   max-width: 42rem;
   color: rgba(26, 26, 26, 0.8);
@@ -1178,7 +1197,7 @@ body.menu-open .mobile-menu {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.6;
   mix-blend-mode: luminosity;
 }
 
