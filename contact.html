@@ -121,6 +121,12 @@
                 method="POST"
                 data-form-name="contact_enquiry"
               >
+                <!-- Return native Formspree submissions to a real GitHub Pages route. -->
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://papermoonweb.com/contact.html?submitted=1"
+                />
                 <div class="contact-field">
                   <label for="name">What's your name?</label>
                   <input type="text" id="name" name="name" placeholder="Jane Doe" required />
@@ -149,6 +155,13 @@
                 </div>
 
                 <button type="submit" class="contact-submit">Send Inquiry</button>
+                <p
+                  class="contact-form-status"
+                  data-form-status
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                ></p>
               </form>
             </div>
           </div>

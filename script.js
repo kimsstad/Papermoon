@@ -558,18 +558,60 @@ function getTrackedFormName(form) {
   return form.dataset.formName || form.getAttribute("name") || form.id || "form";
 }
 
-function handleTrackedFormSuccess(form, result) {
+function setFormStatus(form, message) {
+  const statusNode = form.querySelector("[data-form-status]");
+
+  if (!statusNode) {
+    return;
+  }
+
+  statusNode.textContent = message;
+  statusNode.hidden = false;
+}
+
+function clearFormStatus(form) {
+  const statusNode = form.querySelector("[data-form-status]");
+
+  if (!statusNode) {
+    return;
+  }
+
+  statusNode.textContent = "";
+  statusNode.hidden = true;
+}
+
+function handleTrackedFormSuccess(form) {
   sendGaEvent("generate_lead", {
     form_name: getTrackedFormName(form),
     page_location: window.location.href,
   }, () => {
-    if (result?.next) {
-      window.location.assign(result.next);
-      return;
-    }
-
     form.reset();
+    // Formspree currently returns `/thanks`, which does not exist on this GitHub Pages site.
+    // Keep the success state on the current page instead of following the broken redirect.
+    setFormStatus(
+      form,
+      "Thanks, your message has been sent. We'll be in touch soon."
+    );
   });
+}
+
+function showReturnedFormSuccess() {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("submitted") !== "1") {
+    return;
+  }
+
+  const form = document.querySelector("form[data-form-name='contact_enquiry']");
+
+  if (form) {
+    setFormStatus(form, "Thanks, your message has been sent. We'll be in touch soon.");
+  }
+
+  params.delete("submitted");
+  const nextQuery = params.toString();
+  const nextUrl = `${window.location.pathname}${nextQuery ? `?${nextQuery}` : ""}${window.location.hash}`;
+  window.history.replaceState({}, document.title, nextUrl);
 }
 
 function setupGaFormTracking() {
@@ -578,6 +620,7 @@ function setupGaFormTracking() {
   forms.forEach((form) => {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      clearFormStatus(form);
 
       if (form.dataset.gaSubmitting === "true") {
         return;
@@ -599,7 +642,7 @@ function setupGaFormTracking() {
           throw new Error("Form submission failed.");
         }
 
-        handleTrackedFormSuccess(form, result);
+        handleTrackedFormSuccess(form);
       } catch (error) {
         form.removeAttribute("data-ga-submitting");
         form.submit();
@@ -625,6 +668,7 @@ populateCaseStudyPage();
 finalizeLoadAnimations();
 setupRevealObserver();
 setupGaLinkTracking();
+showReturnedFormSuccess();
 setupGaFormTracking();
 onScroll();
 
