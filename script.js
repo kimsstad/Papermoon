@@ -138,6 +138,12 @@ const projectsData = [
 const touchInteractiveElements = document.querySelectorAll(
   ".hero-title-group, .service-item, .project-card, .service-card, .work-card, .light-action, .dark-action, .contact-email"
 );
+const socialPlatformMatchers = {
+  instagram: /(^|\.)instagram\.com$/i,
+  facebook: /(^|\.)facebook\.com$/i,
+  tiktok: /(^|\.)tiktok\.com$/i,
+  youtube: /(^|\.)youtube\.com$/i,
+};
 
 function setCurrentYear() {
   const yearNode = document.getElementById("year");
@@ -391,6 +397,220 @@ function finalizeLoadAnimations() {
   });
 }
 
+// GA4 tracking code
+function runGaCallback(callback) {
+  if (typeof callback === "function") {
+    callback();
+  }
+}
+
+function sendGaEvent(eventName, params, callback) {
+  if (typeof window.gtag !== "function") {
+    runGaCallback(callback);
+    return;
+  }
+
+  let settled = false;
+  const done = () => {
+    if (settled) {
+      return;
+    }
+
+    settled = true;
+    runGaCallback(callback);
+  };
+
+  window.gtag("event", eventName, {
+    ...params,
+    transport_type: "beacon",
+    event_callback: done,
+  });
+
+  window.setTimeout(done, 500);
+}
+
+function getTrackedLinkText(link) {
+  const text = link.textContent?.trim();
+  return text || link.getAttribute("aria-label") || link.getAttribute("title") || "";
+}
+
+function getTrackedLinkUrl(link) {
+  const href = link.getAttribute("href");
+
+  if (!href) {
+    return "";
+  }
+
+  return new URL(href, window.location.href).href;
+}
+
+function isWhatsappUrl(url) {
+  return /wa\.me|api\.whatsapp\.com|whatsapp\.com/i.test(url);
+}
+
+function getSocialPlatform(url) {
+  let parsedUrl;
+
+  try {
+    parsedUrl = new URL(url);
+  } catch {
+    return "";
+  }
+
+  const hostname = parsedUrl.hostname.toLowerCase();
+
+  if (socialPlatformMatchers.instagram.test(hostname)) {
+    return "instagram";
+  }
+
+  if (socialPlatformMatchers.facebook.test(hostname)) {
+    return "facebook";
+  }
+
+  if (socialPlatformMatchers.tiktok.test(hostname)) {
+    return "tiktok";
+  }
+
+  if (
+    socialPlatformMatchers.youtube.test(hostname) ||
+    hostname === "youtu.be"
+  ) {
+    return "youtube";
+  }
+
+  return "";
+}
+
+function shouldDelayTrackedNavigation(event, link) {
+  return (
+    !event.defaultPrevented &&
+    event.button === 0 &&
+    !event.metaKey &&
+    !event.ctrlKey &&
+    !event.shiftKey &&
+    !event.altKey &&
+    !link.hasAttribute("download") &&
+    (!link.target || link.target === "_self")
+  );
+}
+
+function setupGaLinkTracking() {
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const link = target.closest("a[href]");
+
+    if (!link) {
+      return;
+    }
+
+    const linkUrl = getTrackedLinkUrl(link);
+
+    if (!linkUrl) {
+      return;
+    }
+
+    const linkText = getTrackedLinkText(link);
+    let eventName = "";
+    let params = null;
+
+    if (isWhatsappUrl(linkUrl)) {
+      eventName = "contact_click";
+      params = {
+        contact_method: "whatsapp",
+        link_text: linkText,
+        link_url: linkUrl,
+        page_location: window.location.href,
+      };
+    } else {
+      const socialPlatform = getSocialPlatform(linkUrl);
+
+      if (!socialPlatform) {
+        return;
+      }
+
+      eventName = "social_click";
+      params = {
+        social_platform: socialPlatform,
+        link_text: linkText,
+        link_url: linkUrl,
+        page_location: window.location.href,
+      };
+    }
+
+    if (!shouldDelayTrackedNavigation(event, link)) {
+      sendGaEvent(eventName, params);
+      return;
+    }
+
+    event.preventDefault();
+    sendGaEvent(eventName, params, () => {
+      window.location.assign(linkUrl);
+    });
+  });
+}
+
+function getTrackedFormName(form) {
+  return form.dataset.formName || form.getAttribute("name") || form.id || "form";
+}
+
+function handleTrackedFormSuccess(form, result) {
+  sendGaEvent("generate_lead", {
+    form_name: getTrackedFormName(form),
+    page_location: window.location.href,
+  }, () => {
+    if (result?.next) {
+      window.location.assign(result.next);
+      return;
+    }
+
+    form.reset();
+  });
+}
+
+function setupGaFormTracking() {
+  const forms = document.querySelectorAll("form[data-form-name]");
+
+  forms.forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (form.dataset.gaSubmitting === "true") {
+        return;
+      }
+
+      form.dataset.gaSubmitting = "true";
+
+      try {
+        const response = await fetch(form.action, {
+          method: (form.method || "POST").toUpperCase(),
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+        const result = await response.json().catch(() => null);
+
+        if (!response.ok) {
+          throw new Error("Form submission failed.");
+        }
+
+        handleTrackedFormSuccess(form, result);
+      } catch (error) {
+        form.removeAttribute("data-ga-submitting");
+        form.submit();
+        return;
+      }
+
+      form.removeAttribute("data-ga-submitting");
+    });
+  });
+}
+
 function onScroll() {
   updateHeaderTheme();
   updateHeroParallax();
@@ -404,6 +624,8 @@ setupTouchInteractions();
 populateCaseStudyPage();
 finalizeLoadAnimations();
 setupRevealObserver();
+setupGaLinkTracking();
+setupGaFormTracking();
 onScroll();
 
 window.addEventListener("scroll", onScroll, { passive: true });
